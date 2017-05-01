@@ -1,0 +1,30 @@
+<h2 class="text-muted">Home <small>Tenant Overview</small></h2>
+<hr>
+    <div class="row">
+        <div class="col">
+            <label>Tenant id:</label>
+            <input class="form-control" id="tenantName" type="text" disabled="true" value="{{tenants && tenants[0]._id}}">
+        </div>
+        <div class="col">
+            <label>Tenant name:</label>
+            <input class="form-control" id="disabledInput" type="text" disabled="true" value="{{tenants && tenants[0].tenantName}}">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+
+        <div class="col-xl-3 col-lg-6">
+            <app-stat [bgClass]="'card-info'" [icon]="'fa-tasks'" [count]="tenants && tenants[0].applications.length" [label]="'Applications'" ></app-stat>
+        </div>
+
+        <div class="col-xl-3 col-lg-6">
+            <app-stat [bgClass]="'card-primary'" [icon]="'fa-comments'" [count]="26" [label]="'New Comments!'" ></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <app-stat [bgClass]="'card-success'" [icon]="'fa-shopping-cart'" [count]="124" [label]="'New Orders!'" ></app-stat>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <app-stat [bgClass]="'card-danger'" [icon]="'fa-support'" [count]="13" [label]="'Support'"></app-stat>
+        </div>
+    </div>
+<hr/>
