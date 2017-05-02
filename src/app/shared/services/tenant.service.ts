@@ -2,10 +2,11 @@ import {Injectable} from "@angular/core";
 import {Http, Headers} from "@angular/http";
 import {User} from "../../domain/User";
 import "rxjs/add/operator/map";
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class TenantService {
-    private baseUrl: string = "http://localhost:3000/v1/tenants/";
+    private baseUrl: string = environment.baseUrl + "/v1/tenants/";
 
     constructor(private http:Http){}
 

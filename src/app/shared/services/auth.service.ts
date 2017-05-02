@@ -3,10 +3,11 @@ import { Http, Headers, Response } from '@angular/http';
 import { Router } from '@angular/router';
 import {Observable} from "rxjs";
 import "rxjs/add/operator/map";
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class AuthService {
-    private baseUrl: string = "http://localhost:3000/console";
+    private baseUrl: string = environment.baseUrl + "/console";
 
     isLoggedIn: boolean = false;
     redirectUrl: string;
