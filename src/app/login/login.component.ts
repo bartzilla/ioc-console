@@ -8,16 +8,15 @@ import { Router } from '@angular/router';
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-    private alerts: Array<any> = [];
-    private email: string;
-    private password: string;
-    private dashboard: string = "/dashboard";
+    public alerts: Array<any> = [];
+    public email: string;
+    public password: string;
+    public dashboard: string = "/dashboard";
 
     constructor(private auth: AuthService, private router: Router) {}
 
     public login() {
         this.auth.login(this.email, this.password).subscribe((res => {
-
             if(res.token && res.token.length >=0) {
                 localStorage.setItem("jwt-ioc", res.token);
             }

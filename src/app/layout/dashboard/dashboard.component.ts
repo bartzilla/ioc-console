@@ -10,8 +10,8 @@ import {JwtHelper} from "angular2-jwt";
 })
 
 export class DashboardComponent implements OnInit {
-    private tenants: Tenant[];
-    private email: string;
+    public tenants: Tenant[];
+    public email: string;
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
     private jwtHelper: JwtHelper = new JwtHelper();

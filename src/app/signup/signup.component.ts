@@ -10,11 +10,11 @@ import {Router} from "@angular/router";
 })
 export class SignupComponent implements OnInit {
 
-    private alerts: Array<any> = [];
-    private dashboard: string = "/dashboard";
-    private tenantName: string;
-    private email: string;
-    private password: string;
+    public alerts: Array<any> = [];
+    public dashboard: string = "/dashboard";
+    public tenantName: string;
+    public email: string;
+    public password: string;
 
     constructor(private tenantService: TenantService, private auth: AuthService, private router: Router){}
 
