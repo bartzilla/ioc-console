@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
+import {JwtHelper} from "angular2-jwt";
+import {User} from "../../../domain/User";
 
 @Component({
     moduleId: module.id,
@@ -8,7 +10,12 @@ import {AuthService} from "../../services/auth.service";
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    constructor(private auth: AuthService) { }
+    public user: User;
+    private jwtHelper: JwtHelper = new JwtHelper();
+
+    constructor(private auth: AuthService) {
+        this.user = this.jwtHelper.decodeToken(localStorage.getItem("jwt-ioc"));
+    }
     ngOnInit() {}
 
     public logout() {

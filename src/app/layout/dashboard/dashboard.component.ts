@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {TenantService} from "../../shared/services/tenant.service";
-import {Tenant} from "./Tenant";
 import {JwtHelper} from "angular2-jwt";
 import {User} from "../../domain/User";
 
