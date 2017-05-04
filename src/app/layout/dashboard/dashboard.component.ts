@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TenantService} from "../../shared/services/tenant.service";
 import {Tenant} from "./Tenant";
 import {JwtHelper} from "angular2-jwt";
+import {User} from "../../domain/User";
 
 @Component({
     selector: 'app-dashboard',
@@ -10,19 +11,14 @@ import {JwtHelper} from "angular2-jwt";
 })
 
 export class DashboardComponent implements OnInit {
-    public tenants: Tenant[];
-    public email: string;
+    public user: User;
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
     private jwtHelper: JwtHelper = new JwtHelper();
 
     constructor(private tenantService: TenantService) {
 
-        let user = this.jwtHelper.decodeToken(localStorage.getItem("jwt-ioc"));
-
-        this.tenantService.getTenantsByEmail(user._doc.adminEmail).subscribe(tenants => {
-            this.tenants = tenants;
-        });
+        this.user = this.jwtHelper.decodeToken(localStorage.getItem("jwt-ioc"));
 
         this.sliders.push({
             imagePath: 'assets/images/slider1.jpg',

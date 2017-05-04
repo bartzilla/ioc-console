@@ -1,6 +1,6 @@
 export class User {
-    _id?: any;
+    tenantId: string;
     tenantName: string;
-    email: string;
-    password: string;
+    numberOfApps: number;
+    adminEmail: string;
 }

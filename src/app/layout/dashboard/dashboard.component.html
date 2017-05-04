@@ -3,18 +3,18 @@
     <div class="row">
         <div class="col">
             <label>Tenant id:</label>
-            <input class="form-control" id="tenantName" type="text" disabled="true" value="{{tenants && tenants[0]._id}}">
+            <input class="form-control" id="tenantName" type="text" disabled="true" value="{{user.tenantId}}">
         </div>
         <div class="col">
             <label>Tenant name:</label>
-            <input class="form-control" id="disabledInput" type="text" disabled="true" value="{{tenants && tenants[0].tenantName}}">
+            <input class="form-control" id="disabledInput" type="text" disabled="true" value="{{user.tenantName}}">
         </div>
     </div>
     <hr>
     <div class="row">
 
         <div class="col-xl-3 col-lg-6">
-            <app-stat [bgClass]="'card-info'" [icon]="'fa-tasks'" [count]="tenants && tenants[0].applications.length" [label]="'Applications'" ></app-stat>
+            <app-stat [bgClass]="'card-info'" [icon]="'fa-tasks'" [count]="user.numberOfApps" [label]="'Applications'" ></app-stat>
         </div>
 
         <div class="col-xl-3 col-lg-6">
