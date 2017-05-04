@@ -22,8 +22,8 @@ export class SignupComponent implements OnInit {
         event.preventDefault();
         var newUser = {
             tenantName: this.tenantName,
-            email: this.email,
-            password: this.password,
+            adminEmail: this.email,
+            password: this.password
         };
 
         this.tenantService.createTenant(newUser).subscribe(tenant => {
