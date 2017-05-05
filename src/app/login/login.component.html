@@ -3,6 +3,7 @@
         <div class="col-md-4 push-md-4">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
             <h1>Admin Console</h1>
+
             <form role="form">
                 <div class="form-content">
                     <ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert>
@@ -17,6 +18,7 @@
                 <a class="btn rounded-btn" (click)="login()"> Log in </a>
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+
             </form>
         </div>
     </div>
