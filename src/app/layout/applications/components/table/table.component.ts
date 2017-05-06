@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ApplicationService} from "../../../../shared/services/application.service";
 import {JwtHelper} from "angular2-jwt";
 import {User} from "../../../../domain/User";
+import {Application} from "../../../../domain/Application";
 
 @Component({
     selector: 'apps-table',
@@ -11,7 +12,7 @@ import {User} from "../../../../domain/User";
 export class TableComponent implements OnInit {
 
     public user: User;
-    public applications: Array<any> = [];
+    public applications: Array<Application> = [];
     private jwtHelper: JwtHelper = new JwtHelper();
 
     constructor(private applicationService: ApplicationService) {}
