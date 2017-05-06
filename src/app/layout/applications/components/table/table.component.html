@@ -4,28 +4,18 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Accounts</th>
-                    </tr>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Accounts</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                        <tr *ngFor="let app of applications">
+                            <td>{{app.name}}</td>
+                            <td></td>
+                            <td>{{app.accounts.length}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

@@ -21,6 +21,7 @@ export class TableComponent implements OnInit {
 
         this.applicationService.getApplications(this.user).subscribe(applications => {
             console.log(applications);
+            this.applications = applications;
         });
     }
 }
