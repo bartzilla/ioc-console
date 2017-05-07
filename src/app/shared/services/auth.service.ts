@@ -37,27 +37,12 @@ export class AuthService {
     }
 
     public authenticate(): Observable<boolean>{
-        if(this.tokenNotExpired()) {
-
-            let headers = new Headers();
-            var token = localStorage.getItem("jwt-ioc");
-            this.setAuthorizationToken(headers, token);
-            return this.http.get(this.baseUrl + this.redirectUrl, {headers: headers}).map((res: Response) => {
-                return res.json();
-            });
-        }
-        return Observable.of(false);
-    }
-
-    private tokenNotExpired(): boolean {
-
+        let headers = new Headers();
         var token = localStorage.getItem("jwt-ioc");
-
-        if(token !== null){
-            return true;
-        }
-
-        return false;
+        this.setAuthorizationToken(headers, token);
+        return this.http.get(this.baseUrl + this.redirectUrl, {headers: headers}).map((res: Response) => {
+            return res.json();
+        });
     }
 
     public logout(): Observable<any> {

@@ -21,7 +21,6 @@ export class TableComponent implements OnInit {
         this.user = this.jwtHelper.decodeToken(localStorage.getItem("jwt-ioc"));
 
         this.applicationService.getApplications(this.user).subscribe(applications => {
-            console.log(applications);
             this.applications = applications;
         });
     }

@@ -37,7 +37,6 @@ export class ApplicationService {
         this.setAuthorizationToken(headers, token);
 
         let user = this.jwtHelper.decodeToken(token);
-        console.log(newApplication);
         return this.http.post(this.baseUrl + user.tenantId + "/applications", JSON.stringify(newApplication), {headers: headers})
             .map(res => res.json());
     }

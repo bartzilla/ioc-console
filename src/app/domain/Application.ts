@@ -1,6 +1,7 @@
 export class Application {
-    applicationId?: string;
-    applicationName: string;
+    id?: string;
+    name: string;
+    description?: string;
     accounts?: Array<any>;
 }
 

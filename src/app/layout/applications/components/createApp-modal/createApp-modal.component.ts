@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {ApplicationService} from "../../../../shared/services/application.service";
 
 @Component({
@@ -9,11 +9,15 @@ import {ApplicationService} from "../../../../shared/services/application.servic
 })
 export class CreateAppModalComponent {
     closeResult: string;
+    name: string;
+    description: string;
+    modalRef: NgbModalRef;
 
     constructor(private modalService: NgbModal, private applicationService: ApplicationService) { }
 
     open(content) {
-        this.modalService.open(content).result.then((result) => {
+        this.modalRef = this.modalService.open(content);
+        this.modalRef.result.then((result) => {
             this.closeResult = `Closed with: ${result}`;
         }, (reason) => {
             this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -22,15 +26,15 @@ export class CreateAppModalComponent {
 
     createApplication(event) {
         event.preventDefault();
-
+        let localModalRef = this.modalRef;
         var newApplication = {
-            applicationName: "ui-app"
+            name: this.name,
+            description: this.description
         };
 
-
         this.applicationService.createApplication(newApplication).subscribe(application => {
-            console.log('This is the new application', application);
-            close();
+            console.log('This is the new application', newApplication);
+            localModalRef.close();
         });
     }
 
