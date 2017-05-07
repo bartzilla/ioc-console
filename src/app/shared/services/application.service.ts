@@ -31,6 +31,16 @@ export class ApplicationService {
             .map(res => res.json());
     }
 
+    deleteApplication(id) {
+        // var headers = new Headers();
+        var token = localStorage.getItem("jwt-ioc");
+        // this.setAuthorizationToken(headers, token);
+
+        let user = this.jwtHelper.decodeToken(token);
+        return this.http.delete(this.baseUrl + user.tenantId + "/applications/" + id)
+            .map(res => res.json());
+    }
+
     createApplication(newApplication: Application) {
         var headers = new Headers();
         var token = localStorage.getItem("jwt-ioc");

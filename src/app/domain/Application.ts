@@ -1,5 +1,5 @@
 export class Application {
-    id?: string;
+    _id?: string;
     name: string;
     description?: string;
     accounts?: Array<any>;

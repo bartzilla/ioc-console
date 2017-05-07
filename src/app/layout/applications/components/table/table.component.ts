@@ -24,4 +24,18 @@ export class TableComponent implements OnInit {
             this.applications = applications;
         });
     }
+
+    public deleteApplication(id: string): void {
+        let apps = this.applications;
+        this.applicationService.deleteApplication(id).subscribe(data => {
+            console.log(data);
+
+            for(var i=0; i < apps.length; i++) {
+                if(apps[i]._id === id) {
+                    apps.splice(i, 1);
+                }
+            }
+        });
+    }
+
 }
