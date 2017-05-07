@@ -34,7 +34,8 @@ export class CreateAppModalComponent {
         };
 
         this.applicationService.createApplication(newApplication).subscribe(application => {
-            this.apps.push(newApplication);
+            this.apps.push(application);
+            this.name = this.description = '';
             this.modalRef.close();
         });
     }
