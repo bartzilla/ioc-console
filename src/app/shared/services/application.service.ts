@@ -37,7 +37,7 @@ export class ApplicationService {
         // this.setAuthorizationToken(headers, token);
 
         let user = this.jwtHelper.decodeToken(token);
-        return this.http.delete(this.baseUrl + user.tenantId + "/applications/" + id)
+        return this.http.delete(this.baseUrl + "applications/" + id)
             .map(res => res.json());
     }
 
