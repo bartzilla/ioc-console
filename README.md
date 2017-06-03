@@ -1,13 +1,13 @@
-# SB Admin rewritten in Angular4 and Bootstrap 4
+# Doorman Console
 
-Simple Dashboard Admin App built using Angular 4 and Bootstrap 4
+This is an Open Source project for authentication and user management. 
 
-This project is a port of the famous Free Admin Bootstrap Theme [SB Admin v4.0](http://startbootstrap.com/template-overviews/sb-admin-2/) to Angular4 Theme.
+This project intention is to create a user management service for authentication and authorization. This is the back office application where users will be able to create tenants, applications and accounts. Each account can be grated access to certain number of applications. Doorman's task is to rout accounts and grant access to their respective applications
 
-Powered by [StartAngular](http://startangular.com/) & [StrapUI](http://strapui.com/)
+🚧 The project is still a WIP. I will be adding a more detailed description of each feature and how to use it 🚧
+===
 
-## [Demo](http://rawgit.com/start-angular/SB-Admin-BS4-Angular-4/master/dist/)
-
+## [Demo](https://doorman-console.herokuapp.com/login)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
