@@ -26,20 +26,10 @@ export class TenantService {
     }
 
     createTenant(newUser: User) {
-        var headers = new Headers();
+        let headers = new Headers();
         headers.append("Content-Type", "application/json");
 
         return this.http.post(this.baseUrl, JSON.stringify(newUser), {headers: headers})
-            .map(res => res.json());
-    }
-
-    createApplication(newApplication: Application) {
-        var headers = new Headers();
-        var token = localStorage.getItem("jwt-ioc");
-        this.setAuthorizationToken(headers, token);
-
-        let user = this.jwtHelper.decodeToken(token);
-        return this.http.post(this.baseUrl + user.tenantId + "/applications", JSON.stringify(newApplication), {headers: headers})
             .map(res => res.json());
     }
 

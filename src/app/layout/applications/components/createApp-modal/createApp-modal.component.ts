@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {Application} from "../../../../domain/Application";
-import {TenantService} from "../../../../shared/services/tenant.service";
+import {ApplicationService} from "../../../../shared/services/application.service";
 
 @Component({
     selector: 'createApp-modal',
@@ -15,7 +15,7 @@ export class CreateAppModalComponent {
     modalRef: NgbModalRef;
 
     @Input() apps: Array<Application>;
-    constructor(private modalService: NgbModal, private tenantService: TenantService) { }
+    constructor(private modalService: NgbModal, private applicationService: ApplicationService) { }
 
     open(content) {
         this.modalRef = this.modalService.open(content);
@@ -28,12 +28,12 @@ export class CreateAppModalComponent {
 
     createApplication(event) {
         event.preventDefault();
-        var newApplication = {
+        let newApplication = {
             name: this.name,
             description: this.description
         };
 
-        this.tenantService.createApplication(newApplication).subscribe(application => {
+        this.applicationService.createApplication(newApplication).subscribe(application => {
             this.apps.push(application);
             this.name = this.description = '';
             this.modalRef.close();
