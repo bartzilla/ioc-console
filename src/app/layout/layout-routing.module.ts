@@ -9,7 +9,7 @@ const routes: Routes = [
         children: [
             { path: 'dashboard', canActivate: [AuthGuard], loadChildren: './dashboard/dashboard.module#DashboardModule' },
             { path: 'applications', canActivate: [AuthGuard], loadChildren: './applications/applications.module#ApplicationsModule' },
-            { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
+            { path: 'accounts', canActivate: [AuthGuard], loadChildren: './accounts/accounts.module#AccountsModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
             { path: 'grid', loadChildren: './grid/grid.module#GridModule' },

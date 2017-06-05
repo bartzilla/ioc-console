@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import {AuthGuard} from "./auth.guard";
 import {AuthService} from "./shared/services/auth.service";
 import {ApplicationService} from "./shared/services/application.service";
+import {AccountService} from "./shared/services/account.service";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,7 @@ import {ApplicationService} from "./shared/services/application.service";
         NgbModule.forRoot(),
         AppRoutingModule
     ],
-    providers: [AuthGuard, AuthService, ApplicationService],
+    providers: [AuthGuard, AuthService, ApplicationService, AccountService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

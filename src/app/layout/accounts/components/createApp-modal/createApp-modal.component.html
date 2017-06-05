@@ -1,0 +1,35 @@
+<!-- Large modal -->
+<div class="card-block">
+    <button class="btn btn-success" (click)="open(content)">Create Application</button>
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">Create Application</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="newAppForm">
+                <div class="form-content">
+                    <!--<ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert>-->
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" name="name"
+                               [(ngModel)]="name" placeholder="Name">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" name="description"
+                               [(ngModel)]="description" placeholder="Description">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" (click)="createApplication($event)">Create</button>
+                    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+                </div>
+
+            </form>
+        </div>
+
+    </ng-template>
+</div>
