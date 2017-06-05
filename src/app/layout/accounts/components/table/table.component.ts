@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ApplicationService} from "../../../../shared/services/application.service";
 import {JwtHelper} from "angular2-jwt";
 import {Application} from "../../../../domain/Application";
+import {Account} from "../../../../domain/Account";
 import {AccountService} from "../../../../shared/services/account.service";
 
 @Component({
