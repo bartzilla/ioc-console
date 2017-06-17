@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
     checkLogin(url: string): Observable<boolean> {
 
         this.authService.redirectUrl = url;
-        console.log("I AM AUTHORIZING THIS REQUEST!!!!", url);
+        
         return this.authService.authenticate().map(user => {
                 if(user)
                     return true;
