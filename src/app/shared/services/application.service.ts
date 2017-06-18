@@ -2,17 +2,18 @@ import {Injectable} from "@angular/core";
 import {Http, Headers} from "@angular/http";
 import {User} from "../../domain/User";
 import "rxjs/add/operator/map";
-import { environment } from '../../../environments/environment';
+import {environment} from '../../../environments/environment';
 import {Application} from "../../domain/Application";
 
 @Injectable()
 export class ApplicationService {
     private baseUrl: string = environment.baseUrl + "/v1/applications";
 
-    constructor(private http:Http){}
+    constructor(private http: Http) {
+    }
 
     public setAuthorizationToken(headers: Headers, token) {
-        if(token) {
+        if (token) {
             headers.append("Content-Type", "application/json");
             headers.append("Authorization", token);
         }
